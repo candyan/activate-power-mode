@@ -9,7 +9,15 @@ class Settings
     atom.config.set "#{@scope}.#{param}", value
 
 module.exports = new Settings 'activate-power-mode',
-  throttledShake:
+  shakeIntensity:
+    order: 1
+    type: 'number'
+    minimum: 0
+    maximum: 30
+    default: 2.0
+
+  effect:
     order: 2
-    type: 'boolean'
-    default: true
+    type: 'number'
+    default: 2
+    enum: [1, 2]
